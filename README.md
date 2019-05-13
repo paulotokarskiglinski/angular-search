@@ -1,27 +1,22 @@
 # AngularSearch
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.7.
+AngularSearch é um projeto que implementa uma [Pipe]() de pesquisa que tem por objetivo filtrar e retornar um vetor de objetos que contenham um determinado valor.
 
-## Development server
+A busca é realizada não apenas em um campo, por exemplo o campo "nome" do vetor de objetos, mas sim no vetor de campos que forem passados por parâmetro para a Pipe ["nome", "email", "telefone"].
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+**Exemplo**
+``` angular2html
+<input type="text" id="searchTextUsers" [(ngModel)]="searchTextUsers" placeholder="Type here...">
 
-## Code scaffolding
+<table>
+  <tr *ngFor="let user of users | search:searchTextUsers:['name','username','email','phone','website']">
+    <td>{{user.username}}</td>
+    <td>{{user.name}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.phone}}</td>
+    <td>{{user.website}}</td>
+  </tr>
+</table>
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Este projeto foi gerado com o [Angular CLI](https://github.com/angular/angular-cli) versão 7.3.7.

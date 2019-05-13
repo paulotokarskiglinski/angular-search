@@ -1,21 +1,55 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<h1>Search for a User</h1>
+<p>
+  <small>Users from <a href="https://jsonplaceholder.typicode.com/users" target="_blank" title="Fake Database">JSON Placeholder</a></small>
+</p>
+<input type="text" class="form-control" id="searchTextUsers" [(ngModel)]="searchTextUsers" placeholder="Type here...">
 
-<router-outlet></router-outlet>
+<br><br>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Username</th>
+      <th scope="col">Name</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Website</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users | search:searchTextUsers:['name','username','email','phone','website']">
+      <td>{{user.username}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.phone}}</td>
+      <td>{{user.website}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<br><br>
+
+<h1>Search for a Comment</h1>
+<p>
+  <small>Comments from <a href="https://jsonplaceholder.typicode.com/comments" target="_blank" title="Fake Database">JSON Placeholder</a></small>
+</p>
+<input type="text" class="form-control" id="searchTextComments" [(ngModel)]="searchTextComments" placeholder="Type here...">
+
+<br><br>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">E-mail</th>
+    <th scope="col">Body</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let comment of comments | search:searchTextComments:commentsSearchFields">
+    <td>{{comment.name}}</td>
+    <td>{{comment.email}}</td>
+    <td>{{comment.body}}</td>
+  </tr>
+  </tbody>
+</table>
