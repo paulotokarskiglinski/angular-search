@@ -19,4 +19,4 @@ A busca é realizada não apenas em um campo, por exemplo o campo "nome" do veto
 </table>
 ```
 
-Este projeto foi gerado com o [Angular CLI](https://github.com/angular/angular-cli) versão 7.3.7.
+Este projeto utiliza o [Angular](https://angular.io/) versão 8.0.0.
