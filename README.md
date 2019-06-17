@@ -4,8 +4,10 @@ AngularSearch é um projeto que implementa uma [Pipe](https://github.com/pauloto
 
 A busca é realizada não apenas em um campo, por exemplo o campo "nome" do vetor de objetos, mas sim no vetor de campos que forem passados por parâmetro para a Pipe ["nome", "email", "telefone"].
 
+**Versão online:** https://angularsearch.herokuapp.com/
+
 **Exemplo**
-``` angular2html
+``` html
 <input type="text" id="searchTextUsers" [(ngModel)]="searchTextUsers" placeholder="Type here...">
 
 <table>
