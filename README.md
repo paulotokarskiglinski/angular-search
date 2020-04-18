@@ -11,7 +11,7 @@ A busca é realizada não apenas em um campo, por exemplo o campo "nome" do veto
 <input type="text" id="searchTextUsers" [(ngModel)]="searchTextUsers" placeholder="Type here...">
 
 <table>
-  <tr *ngFor="let user of users | search:searchTextUsers:['name','username','email','phone','website']">
+  <tr *ngFor="let user of users | search:searchTextUsers">
     <td>{{user.username}}</td>
     <td>{{user.name}}</td>
     <td>{{user.email}}</td>
