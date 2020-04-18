@@ -17,7 +17,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of users | search:searchTextUsers:['name','username','email','phone','website']">
+    <tr *ngFor="let user of users | search:searchTextUsers">
       <td>{{user.username}}</td>
       <td>{{user.name}}</td>
       <td>{{user.email}}</td>
