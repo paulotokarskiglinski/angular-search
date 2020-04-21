@@ -2,7 +2,7 @@
 
 AngularSearch é um projeto que implementa uma [Pipe](https://github.com/paulotokarskiglinski/angularSearch/blob/master/src/app/pipes/search.pipe.ts) de pesquisa que tem por objetivo filtrar e retornar um vetor de objetos que contenham um determinado valor.
 
-A busca é realizada por todos os campos do objeto enviado.
+A busca é realizada nos campos do objeto enviado.
 
 **Versão online:** https://angularsearch.herokuapp.com/
 
